@@ -6,7 +6,7 @@ var app = express();
 app.use(morgan('combined'));
 
 var articles = {
-    articleOne : {
+    'article-one' : {
   title: 'A1 | MEA',
   heading: 'Article One',
   date: '29 September 2016', 
@@ -17,7 +17,7 @@ var articles = {
                     The Ministry of External Affairs was the first government department to have a mobile app for smartphones with the launch of MEAIndia on 29 July 2013. by Foreign Secretary Ranjan Mathai. The app will help users apply for a passport, get visa information, and learn the location of Indian consulates worldwide.
                 </p>`
 },
-    articleTwo : {title: 'A2 | MHA',
+    'article-two' : {title: 'A2 | MHA',
   heading: 'Article Two',
   date: '30 September 2016', 
   content: `<p>
@@ -26,7 +26,7 @@ var articles = {
                 <p>
                     The Home Ministry is also the cadre controlling Authority for the Indian Police Service(IPS), DANIPS and DANICS. Police-I Division of the Ministry is the Cadre Controlling Authority in respect of the Indian Police Service; whereas, the UT Division is the administrative Division for DANIPS and DANICS and the All India Service Officers posted and working in the AGMUT Cadre.
                 </p>`},
-    articleThree : {title: 'A3 | MLJ',
+    'article-three' : {title: 'A3 | MLJ',
   heading: 'Article Three',
   date: '1 October 2016', 
   content: ` <p>
@@ -69,12 +69,16 @@ var htmlTemp= `
 </html> `;
 return htmlTemp;
 }
+
+
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 
-app.get('/article-one', function (req, res) {
-   res.send(createTemplate(articleOne));
+app.get(':/articleName', function (req, res) {
+    var articleName = req.params.articleName;
+   res.send(createTemplate(articles[articleName]));
 });
 
 app.get('/article-two', function (req, res) {

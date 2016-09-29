@@ -5,7 +5,8 @@ var path = require('path');
 var app = express();
 app.use(morgan('combined'));
 
-var articleOne= {
+var articles = {
+    articleOne : {
   title: 'A1 | MEA',
   heading: 'Article One',
   date: '29 September 2016', 
@@ -15,6 +16,22 @@ var articleOne= {
                 <p>
                     The Ministry of External Affairs was the first government department to have a mobile app for smartphones with the launch of MEAIndia on 29 July 2013. by Foreign Secretary Ranjan Mathai. The app will help users apply for a passport, get visa information, and learn the location of Indian consulates worldwide.
                 </p>`
+},
+    articleTwo : {title: 'A2 | MHA',
+  heading: 'Article Two',
+  date: '30 September 2016', 
+  content: `<p>
+                    The Ministry of Home Affairs (MHA) or Home Ministry is a ministry of the Government of India. An interior ministry, it is mainly responsible for the maintenance of internal security and domestic policy. The Home Ministry is headed by Union Minister of Home Affairs. Shri Rajnath Singh is the present Minister of Home Affairs.
+                </p>
+                <p>
+                    The Home Ministry is also the cadre controlling Authority for the Indian Police Service(IPS), DANIPS and DANICS. Police-I Division of the Ministry is the Cadre Controlling Authority in respect of the Indian Police Service; whereas, the UT Division is the administrative Division for DANIPS and DANICS and the All India Service Officers posted and working in the AGMUT Cadre.
+                </p>`},
+    articleThree : {title: 'A3 | MLJ',
+  heading: 'Article Three',
+  date: '1 October 2016', 
+  content: ` <p>
+                    The Minister of Law and Justice is head of the Ministry of Law and Justice and one of the Cabinet Ministers of the Government of India. Ravi Shankar Prasad is incumbent Minister of Law and Justice.
+                </p>`}
 };
 
 

@@ -35,5 +35,5 @@ button.onclick = function (){
     };
   // make a request
   request.open('GET','http://masoomjain.imad.hasura-app.io/counter',true);
-  request.status(null);
+  request.send(null);
 };
